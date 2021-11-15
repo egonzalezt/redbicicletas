@@ -1,0 +1,59 @@
+extends layout
+
+block content
+
+  // Responsive navbar
+  nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+    .container
+      a.navbar-brand(href='/') Redbisicletas
+      button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarSupportedContent.collapse.navbar-collapse
+        ul.navbar-nav.ms-auto.mb-2.mb-lg-0
+          li.nav-item
+            a.nav-link(href='#') Home
+          li.nav-item
+            a.nav-link(href='#!') About
+          li.nav-item
+            a.nav-link(href='#!') Contact
+          li.nav-item
+            a.nav-link.active(aria-current='page' href='#') Blog
+  // Page header with logo and tagline
+  header.py-5.bg-light.border-bottom.mb-4
+    .container
+      .text-center.my-5
+        h1.fw-bolder redBicicletas Home!
+        p.lead.mb-0 The place where you can find the best cycles in the city
+  // Page content
+  .container
+    .row
+      // Blog entries
+      .col-lg-8
+        // Featured blog post
+        .card.mb-4
+          a(href='#!')
+            img.card-img-top(src='https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/82614c38823695.5770ea557a3a8.gif' alt='...')
+          .card-body
+            h2.card-title Your bicycle  information
+            
+            ul#bici(aria-label="Vehicle Models Available:")
+                li= bici.id
+                li= bici.color
+                li= bici.modelo 
+                li= bici.ubicacion[0]
+                li= bici.ubicacion[1]
+
+            p.card-text
+              | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!
+        // Nested row for non-featured blog posts
+        .container 
+            #main_map
+  // Footer
+  footer.py-5.bg-dark
+    .container
+      p.m-0.text-center.text-white Copyright &copy; Your Website 2021
+  // Bootstrap core JS
+  script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js')
+  // Core theme JS
+  script(src='/js/scripts.js')
+  script(src='/js/maps.js')
