@@ -5,12 +5,9 @@ const client = new MongoClient(dburl);
 let _db;
 
 client.on('serverClosed', (event) => {
-  // eslint-disable-next-line no-console
   console.log('received serverClosed');
-  // eslint-disable-next-line no-console
   console.log(JSON.stringify(event, null, 2));
 
-  // should i call mongoDBConnection() here if connection lost while app running?
 });
 
 const mongoDBConnection = async (app) => {
