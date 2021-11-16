@@ -51,11 +51,11 @@ let Bicicleta = function (id, color, modelo, ubicacion) {
       modelo:bici.modelo,
       ubicacion:bici.ubicacion,
     }
-    db.updateBici(bici.id,newvals)
+    return db.updateBici(bici.id,newvals);
   };
   
   Bicicleta.removeById = function (aBiciId) {
-    db.deleteBici(aBiciId)
+    return db.deleteBici(aBiciId);
   };
   
 module.exports = Bicicleta;

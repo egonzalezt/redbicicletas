@@ -1,0 +1,20 @@
+version: '3.7'
+services:
+  redbici:
+    image: "node:14"
+    build: .
+    container_name: redbici
+    ports:
+      - "3000:3000"
+    links:
+      - redbicisdb
+    depends_on:
+      - redbicisdb
+  redbicisdb:
+    image: mongo
+    restart: always
+    ports:
+      - "27017:27017"
+    container_name: redbicisdb
+    volumes:
+      - ~/mongo:/data/db

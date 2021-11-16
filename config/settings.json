@@ -1,5 +1,5 @@
 {
-    "dburl":"mongodb://localhost:27017/",
+    "dburl":"mongodb://redbicisdb:27017/",
     "dbcollection":"redbicidb",
     "collection":"Bicicleta"
 }
