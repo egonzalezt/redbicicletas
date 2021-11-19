@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redbici-v1
+  labels:
+    app: redbici
+    version: "1.0"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: redbici
+  template:
+    metadata:
+      labels:
+        app: redbici
+        version: "1.0"
+    spec:
+      containers:
+      - name: redbici
+        image: daves2126/redbicicletastopicos:1.1
+        ports:
+        - name: http-server
+          containerPort: 3000

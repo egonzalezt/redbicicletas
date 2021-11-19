@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: redbici
+  labels:
+    app: redbici
+spec:
+  ports:
+  - port: 3000
+    targetPort: http-server
+  selector:
+    app: redbici
+  type: NodePort
